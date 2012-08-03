@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>altxkcd</title>
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAADbUlEQVRYCe2XS0hyQRTHtRdFIZRIEIVBgVCLFtFWaGGg0YMEg4QiCXcitBEXGUSU0MbETRltoqIHQRSIGNFGoiBBSNoESZaBYIimFj38Tly4Xe517sN7jfjQ1ZmZM+f/mzPjmbniXC4n+ku/sr8E881SAmLakVKG/p8Mra6uplIppvUUYRzqUN4fSNXV1U1NTV1cXOR1KFKnCBWXuPauri6Xy5VIJFDOAvazAsLgampqJiYm/H6/gPLUUByA8Jx1dnY6HI54PE4Nx78HCXR9fW02m+vr63EOklFdXa3X68/OzvhDECMggTCnbDa7sbGhVCpJNMSmQqFYWlqKxWLEuAXbDEB43Jubm+npaalUSkQh2lVVVTqd7uTk5OvrC59VgMEWCAv9+vq6vb3d3d1NRCHZbW1ti4uLT09PBdDAFG5AmIbb7SZBUJsVFRUjIyMej+fz85MTGV8gi8Wi0WjKypCXtFwun5ube3h4YInFF8jn84HS/f397OxsS0sLNVVYT3l5+cDAwNHR0cfHBz2ZMECYBogdHx8PDQ3BfqHImpubbTZbOBxGYQkJhGs8Pj7Oz8+3traisGCL1Wr1wcHB+/s7PgszigKEhYbj7PV6tVptZWUlimx0dJQEhDyMqBDs+yENfX19+/v7kUjEbre3t7dT50IdIXUWEQhXamxs7O/vhz2iSRXujDx9uAcfI51O7+7uQt06Pz9nGadYQFdXV2tra1tbW8lkkiUK5iYwEMgDBKQkEAjQc0DBnJycNBgMJDfBgGBTgGNnZyeTyZA0iE24gwcHB+FlrFKp8tZ3vkDPz8/Ly8uAEgqFiMJUu6OjA/IxPj4uk8mooz89pDLApgnyP/OZrNraWtga9g9fzoUR3hWwSiaM7/Genp6VlRU4VWwWifuwBcLuqeHhYZp7CqNsaGgwmUzBYBDX4GQwA93d3c3MzMClSJ8VsVjc29u7ubkJr15OBCRnJNDb29ve3h7UflCiR2lqarJarbe3t6TQhTWRQAz/BZEI9g6eOIeHh9QbuzAUbBYSiCYr8GpeWFiIRqN8hFFzOQDBh9jY2Njp6SnP7woUCocMwbe90+mEGkgfS5BRugxJJBKj0Xh5eSmIEssgSKD19fWXlxeWUQR0E0MsmvP7+0O/8WLktKoSEFO6ShkqZYgpA0zj/wCQWCRQFwYK8AAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+<meta property="og:title" content="altxkcd" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.altxkcd.com" />
+<meta property="og:image" content="http://www.altxkcd.com/facebook-large.png" />
+<meta property="og:site_name" content="altxkcd" />
+<meta property="fb:admins" content="701799" />
+<meta property="og:description" content="An alternative implementation of XKCD (A webcomic of romance, sarcasm, math, and language) that's perfect for sharing." />
+<style type="text/css">
+body
+{
+  background-color:#96A8C8;
+}
+
+#frame {
+  margin: auto;
+  width: 775px;
+}
+
+#content {
+  text-align:center;
+  font-size:16px;
+  font-variant:small-caps;
+  font-family:Lucida,sans-serif;
+  font-weight:500;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  clear:both;
+}
+
+.fb-like-box {
+  background: white;
+  height: 62px;
+  width: 225px;
+}
+
+.rc5 {
+  border: 2px solid #000;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.controls ul
+{
+  list-style-type:none;
+  width:400px;
+  margin:auto;
+  padding:0;
+}
+
+.controls ul li
+{
+  float:left;
+}
+
+.controls ul li a
+{
+  display:block;
+  width:70px;
+  border:1px solid #000;
+  background-color:#6E7B91;
+  color:#FFF;
+  text-decoration:none;
+  font-size:16px;
+  font-variant:small-caps;
+  font-family:Lucida,sans-serif;
+  font-weight:600;
+  margin:0 4px;
+}
+
+.controls ul li a:hover
+{
+  background-color:#FFF;
+  color:#6E7B91;
+}
+
+.clearfix {
+  clear:both;
+}
+
+#title, #alt, #sourcelink {
+  margin: 20px 0;
+}
+
+.titletext {
+  font-size: 20px;
+  font-variant: small-caps;
+  font-family: Lucida,sans-serif;
+  font-weight: 800;
+}
+
+#footer {
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+#logo {
+  font-size: 48px;
+  margin-top: 5px;
+}
+
+#header {
+  height: 66px;
+  margin: 20px auto 0 auto;
+}
+
+.floatleft {
+  float:left;
+}
+
+.floatright {
+  float:right;
+}
+</style>
+
+<script type="text/javascript">
+  
+  var latestcomic = 1;
+  var pageLoading = true;
+  var comic = {};
+  
+  function loadScript(url) {
+    var scriptTag = document.createElement("script");
+    scriptTag.type = "text/javascript";
+    scriptTag.src = url;
+    document.getElementsByTagName("head")[0].appendChild(scriptTag);
+  }
+  
+  function loadComic(number) {
+    var filename = "info.0.json.gz";
+    var path = "content/";
+    if (number) {
+      path += number + "/" + filename;
+    } else {
+      path += filename;
+    }
+    loadScript(path);
+  }
+  
+  function updateComic(loadedComic){
+    comic = loadedComic;
+	if (comic.num > latestcomic){
+      latestcomic = comic.num;
+    }
+    spliturl = window.location.href.split("#");
+    if (comic.num != latestcomic && spliturl.length > 1) {
+      window.location.href = spliturl[0] + "#" + comic.num.toString();
+    }
+       
+    document.getElementById("title").innerHTML = comic.title;
+    document.getElementsByTagName("title")[0].innerHTML = "altxkcd: " + comic.title;
+    var imagetag = ['<img src="', comic.img, '" alt="', comic.title, '" title="', comic.alt,'" />'];
+    document.getElementById("comic").innerHTML = imagetag.join("");
+    document.getElementById("alt").innerHTML = comic.alt;
+    document.getElementById("permalink").href = "http://xkcd.com/" + comic.num.toString()
+    document.getElementById("permalink").innerHTML = "http://xkcd.com/" + comic.num.toString();
+    if (!pageLoading) {
+      _gaq.push(['_trackPageview', window.location.href]);
+    }
+    pageLoading = false;
+  }
+    
+  function loadStatefulComic(type){
+    comicid = "";
+    switch(type) {
+      case "current":
+        break;
+      case "prev":
+        comicid = comic.num - 1 > 0 ? comic.num - 1 : 0;
+        break;
+      case "next":
+        comicid = comic.num < latestcomic ? comic.num + 1 : latestcomic;
+        break;
+      case "rand":
+        comicid = Math.round(Math.random() * latestcomic);
+        break;
+      case "first":
+        comicid = "1";
+        break;
+      default:
+        comicid = type;
+    }
+    loadComic(comicid);
+  }
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-22124372-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body>
+<div id="frame">
+<div id="header">
+<div id="logo" class="floatleft titletext">&lt;altxkcd.com&gt;</div>
+<div class="floatright rc5 fb-like-box" data-href="http://www.facebook.com/pages/altxkcd/234929269891924" data-width="225" data-show-faces="false" data-stream="false" data-header="false"></div>
+<div class="clearfix"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="content" class="rc5">
+<h1 id="title" class="titletext">
+</h1>
+<div id="comic">
+</div>
+<div id="alt">
+</div>
+<div id="sourcelink">
+<a id="permalink" href="http://xckd.com" target="_blank">http://xckd.com</a>
+</div>
+<div id="bottomcontrols" class="controls">
+<ul>
+<li onclick="loadStatefulComic('first');"><a href="#">|&lt;</a></li>
+<li onclick="loadStatefulComic('prev');"><a href="#">&lt; Prev</a></li>
+<li onclick="loadStatefulComic('rand');"><a href="#">Random</a></li>
+<li onclick="loadStatefulComic('next');"><a href="#">Next &gt;</a></li>
+<li onclick="loadStatefulComic('current');"><a href="#">&gt;|</a></li>
+</ul>
+</div>
+<div class="clearfix"></div>
+</div>
+<div id="footer" class="titletext">Built by <a href="http://www.theozer.com/">Zachary Ozer</a> | <a href="mailto:altxkcd@theozer.com">Contact</a></div>
+</div>
+<script type="text/javascript" src="content/info.0.json.gz"></script>
+</body>
+</html>

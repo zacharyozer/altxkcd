@@ -1,0 +1,5 @@
+[Defaults]
+jsonp = updateComic
+bucket = s3bucket
+key = awskey
+secret = awssecret
